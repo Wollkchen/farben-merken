@@ -42,7 +42,7 @@ denn es ist nur ein Ordner mit Dateien.
 
 ### 1. Repo auf GitHub hochladen (einmalig)
 
-Im Ordner `C:\Users\kiese\Projekte\farben-merken`:
+Im Projektordner `farben-merken`:
 
 ```bash
 gh repo create farben-merken --public --source . --push
