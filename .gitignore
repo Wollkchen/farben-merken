@@ -1,0 +1,13 @@
+# Geheimnisse gehören NIE ins Repo
+.env
+.env.*
+*.pem
+*.key
+.dev.vars
+
+# Protokolle des Wächters (lokal)
+waechter/logs/
+
+node_modules/
+.DS_Store
+Thumbs.db

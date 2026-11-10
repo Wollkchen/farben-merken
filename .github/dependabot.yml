@@ -1,0 +1,18 @@
+# Dependabot hält die GitHub-Actions automatisch aktuell (wöchentlich ein Pull Request).
+# Die Website selbst hat absichtlich KEINE npm-Pakete. Kommen später welche dazu,
+# wird der npm-Block unten automatisch aktiv.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      actions:
+        patterns: ["*"]
+
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5

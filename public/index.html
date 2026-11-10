@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Farben merken</title>
+  <meta name="description" content="Merk dir die Farbfolge! Ein kleines Gedächtnisspiel mit 8 Farben – direkt im Browser, ohne Anmeldung, ohne Werbung.">
+  <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="dark light">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="spiel.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Farben merken</h1>
+      <p class="untertitel">Schau zu, merk dir die Folge, klick sie nach. Jede Runde kommt eine Farbe dazu.</p>
+    </header>
+
+    <section class="anzeige" aria-label="Spielstand">
+      <div><span class="label">Runde</span><span id="runde" class="wert">0</span></div>
+      <div><span class="label">Rekord</span><span id="rekord" class="wert">0</span></div>
+    </section>
+
+    <p id="status" class="status" role="status" aria-live="polite">Drück auf „Start“.</p>
+
+    <section id="brett" class="brett" aria-label="Farbfelder">
+      <button class="feld" data-farbe="0" aria-label="Rot (Taste 1)" disabled><span>1</span></button>
+      <button class="feld" data-farbe="1" aria-label="Orange (Taste 2)" disabled><span>2</span></button>
+      <button class="feld" data-farbe="2" aria-label="Gelb (Taste 3)" disabled><span>3</span></button>
+      <button class="feld" data-farbe="3" aria-label="Grün (Taste 4)" disabled><span>4</span></button>
+      <button class="feld" data-farbe="4" aria-label="Türkis (Taste 5)" disabled><span>5</span></button>
+      <button class="feld" data-farbe="5" aria-label="Blau (Taste 6)" disabled><span>6</span></button>
+      <button class="feld" data-farbe="6" aria-label="Lila (Taste 7)" disabled><span>7</span></button>
+      <button class="feld" data-farbe="7" aria-label="Pink (Taste 8)" disabled><span>8</span></button>
+    </section>
+
+    <div class="steuerung">
+      <button id="start" class="start">Start</button>
+      <label class="ton"><input id="ton" type="checkbox" checked> Ton</label>
+    </div>
+
+    <footer>
+      <p>Keine Anmeldung, keine Werbung, kein Tracking. Dein Rekord wird nur in deinem Browser gespeichert.</p>
+    </footer>
+  </main>
+</body>
+</html>

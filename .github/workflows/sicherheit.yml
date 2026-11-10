@@ -1,0 +1,60 @@
+# Automatische Sicherheitsprüfungen auf GitHub.
+# Läuft bei jedem Push, bei Pull Requests und jeden Montag früh.
+name: Sicherheit
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "17 4 * * 1"
+  workflow_dispatch:
+
+# Standard: nur lesen. Jeder Job bekommt nur, was er wirklich braucht.
+permissions:
+  contents: read
+
+jobs:
+  code-und-header:
+    name: Code- und Header-Prüfung
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - name: Lokaler Selbsttest (Code-Regeln, Header, Integrität)
+        run: node server.mjs --selbsttest
+      - name: Live-Seite prüfen (nur wenn Variable SITE_URL gesetzt ist)
+        if: ${{ vars.SITE_URL != '' }}
+        run: node scripts/pruefen.mjs "${{ vars.SITE_URL }}"
+
+  geheimnisse:
+    name: Suche nach versehentlich eingecheckten Geheimnissen
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  codeql:
+    name: CodeQL (JavaScript-Analyse)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      security-events: write
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: github/codeql-action/init@v4
+        with:
+          languages: javascript-typescript, actions
+          queries: security-extended
+      - uses: github/codeql-action/analyze@v4

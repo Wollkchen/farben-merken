@@ -1,0 +1,16 @@
+{
+  "name": "farben-merken",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Statische Website mit einem Farben-Merkspiel. Keine Abhängigkeiten.",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node server.mjs --selbsttest",
+    "pruefen": "node scripts/pruefen.mjs",
+    "waechter": "powershell -NoProfile -ExecutionPolicy Bypass -File waechter/waechter.ps1"
+  }
+}

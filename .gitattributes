@@ -1,0 +1,7 @@
+# Überall LF-Zeilenenden: Die Dateien auf dem Laptop müssen Byte für Byte
+# gleich sein wie auf der Live-Seite, sonst meldet der Integritäts-Check falschen Alarm.
+* text=auto eol=lf
+*.ps1 text eol=crlf
+*.svg text eol=lf
+*.png binary
+*.ico binary
