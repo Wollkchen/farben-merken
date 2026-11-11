@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reaktion – Kopfspiele</title>
+  <meta name="description" content="Wie schnell reagierst du? Warte, bis das Feld grün wird, und klick sofort. 5 Versuche, dein Durchschnitt zählt.">
+  <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="dark light">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="reaktion.js" type="module"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <a class="zurueck" href="./">← Alle Spiele</a>
+      <h1>Reaktion</h1>
+      <p class="untertitel">Warte, bis das Feld grün wird, dann klick so schnell du kannst. 5 Versuche, dein Durchschnitt zählt.</p>
+    </header>
+
+    <section class="anzeige" aria-label="Spielstand">
+      <div><span class="label">Versuch</span><span id="versuch" class="wert">0/5</span></div>
+      <div><span class="label">Rekord</span><span id="rekord" class="wert">–</span></div>
+    </section>
+
+    <button id="flaeche" class="flaeche">Hier klicken zum Starten</button>
+    <ul id="zeiten" class="zeiten" aria-label="Deine Zeiten"></ul>
+    <p id="status" class="status" role="status" aria-live="polite">Tipp: Am Laptop geht auch die Leertaste.</p>
+
+    <div class="steuerung">
+      <label class="ton"><input id="ton" type="checkbox" checked> Ton</label>
+    </div>
+
+    <footer>
+      <p><a href="datenschutz">Datenschutz</a></p>
+    </footer>
+  </main>
+</body>
+</html>

@@ -3,46 +3,50 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Farben merken</title>
-  <meta name="description" content="Merk dir die Farbfolge! Ein kleines Gedächtnisspiel mit 8 Farben – direkt im Browser, ohne Anmeldung, ohne Werbung.">
+  <title>Kopfspiele – kleine Spiele für zwischendurch</title>
+  <meta name="description" content="Kleine Gedächtnis- und Reaktionsspiele direkt im Browser: Farben merken, Reaktion, Zahlen-Blitz und Schnell-Rechnen. Ohne Anmeldung, ohne Werbung, ohne Tracking.">
   <meta name="referrer" content="no-referrer">
   <meta name="color-scheme" content="dark light">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
-  <script src="spiel.js" defer></script>
+  <script src="start.js" type="module"></script>
 </head>
 <body>
-  <main>
+  <main class="breit">
     <header>
-      <h1>Farben merken</h1>
-      <p class="untertitel">Schau zu, merk dir die Folge, klick sie nach. Jede Runde kommt eine Farbe dazu.</p>
+      <h1>Kopfspiele</h1>
+      <p class="untertitel">Kleine Spiele für zwischendurch. Such dir eins aus und knack deinen Rekord.</p>
     </header>
 
-    <section class="anzeige" aria-label="Spielstand">
-      <div><span class="label">Runde</span><span id="runde" class="wert">0</span></div>
-      <div><span class="label">Rekord</span><span id="rekord" class="wert">0</span></div>
-    </section>
-
-    <p id="status" class="status" role="status" aria-live="polite">Drück auf „Start“.</p>
-
-    <section id="brett" class="brett" aria-label="Farbfelder">
-      <button class="feld" data-farbe="0" aria-label="Rot (Taste 1)" disabled><span>1</span></button>
-      <button class="feld" data-farbe="1" aria-label="Orange (Taste 2)" disabled><span>2</span></button>
-      <button class="feld" data-farbe="2" aria-label="Gelb (Taste 3)" disabled><span>3</span></button>
-      <button class="feld" data-farbe="3" aria-label="Grün (Taste 4)" disabled><span>4</span></button>
-      <button class="feld" data-farbe="4" aria-label="Türkis (Taste 5)" disabled><span>5</span></button>
-      <button class="feld" data-farbe="5" aria-label="Blau (Taste 6)" disabled><span>6</span></button>
-      <button class="feld" data-farbe="6" aria-label="Lila (Taste 7)" disabled><span>7</span></button>
-      <button class="feld" data-farbe="7" aria-label="Pink (Taste 8)" disabled><span>8</span></button>
-    </section>
-
-    <div class="steuerung">
-      <button id="start" class="start">Start</button>
-      <label class="ton"><input id="ton" type="checkbox" checked> Ton</label>
-    </div>
+    <nav class="kacheln" aria-label="Spiele">
+      <a class="kachel" href="farben-merken">
+        <span class="kachel-symbol farbe-1" aria-hidden="true">◼</span>
+        <span class="kachel-titel">Farben merken</span>
+        <span class="kachel-text">Merk dir die Farbfolge und klick sie nach. Jede Runde eine Farbe mehr.</span>
+        <span class="kachel-rekord" data-rekord="farben-merken-rekord" data-einheit=" Runden"></span>
+      </a>
+      <a class="kachel" href="reaktion">
+        <span class="kachel-symbol farbe-2" aria-hidden="true">⚡</span>
+        <span class="kachel-titel">Reaktion</span>
+        <span class="kachel-text">Warte, bis das Feld grün wird, und klick so schnell du kannst.</span>
+        <span class="kachel-rekord" data-rekord="reaktion-rekord" data-einheit=" ms" data-weniger-besser="1"></span>
+      </a>
+      <a class="kachel" href="zahlen-blitz">
+        <span class="kachel-symbol farbe-3" aria-hidden="true">#</span>
+        <span class="kachel-titel">Zahlen-Blitz</span>
+        <span class="kachel-text">Eine Zahl blitzt kurz auf. Tipp sie nach. Jede Runde eine Ziffer mehr.</span>
+        <span class="kachel-rekord" data-rekord="zahlen-blitz-rekord" data-einheit=" Ziffern"></span>
+      </a>
+      <a class="kachel" href="schnell-rechnen">
+        <span class="kachel-symbol farbe-4" aria-hidden="true">±</span>
+        <span class="kachel-titel">Schnell-Rechnen</span>
+        <span class="kachel-text">60 Sekunden, so viele Aufgaben wie möglich. Es wird immer schwerer.</span>
+        <span class="kachel-rekord" data-rekord="schnell-rechnen-rekord" data-einheit=" richtig"></span>
+      </a>
+    </nav>
 
     <footer>
-      <p>Keine Anmeldung, keine Werbung, kein Tracking. Dein Rekord wird nur in deinem Browser gespeichert.</p>
+      <p>Keine Anmeldung, keine Werbung, kein Tracking. Deine Rekorde werden nur in deinem Browser gespeichert.</p>
       <p><a href="datenschutz">Datenschutz</a></p>
     </footer>
   </main>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Schnell-Rechnen – Kopfspiele</title>
+  <meta name="description" content="60 Sekunden Kopfrechnen: so viele Aufgaben wie möglich. Je mehr du schaffst, desto schwerer wird es.">
+  <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="dark light">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="schnell-rechnen.js" type="module"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <a class="zurueck" href="./">← Alle Spiele</a>
+      <h1>Schnell-Rechnen</h1>
+      <p class="untertitel">60 Sekunden, so viele Aufgaben wie möglich. Die Antwort zählt sofort, wenn sie stimmt.</p>
+    </header>
+
+    <section class="anzeige" aria-label="Spielstand">
+      <div><span class="label">Zeit</span><span id="zeit" class="wert">60</span></div>
+      <div><span class="label">Richtig</span><span id="punkte" class="wert">0</span></div>
+      <div><span class="label">Rekord</span><span id="rekord" class="wert">0</span></div>
+    </section>
+
+    <div id="aufgabe" class="grossanzeige" aria-live="polite">? + ?</div>
+    <div class="balken" aria-hidden="true"><div id="balken"></div></div>
+
+    <div class="eingabe">
+      <input id="antwort" type="text" inputmode="numeric" autocomplete="off" maxlength="6" aria-label="Deine Antwort" placeholder="Ergebnis" disabled>
+      <button id="weiter" disabled>Überspringen</button>
+    </div>
+
+    <p id="status" class="status" role="status" aria-live="polite">Drück auf „Start“.</p>
+
+    <div class="steuerung">
+      <button id="start" class="start">Start</button>
+      <label class="ton"><input id="ton" type="checkbox" checked> Ton</label>
+    </div>
+
+    <footer>
+      <p><a href="datenschutz">Datenschutz</a></p>
+    </footer>
+  </main>
+</body>
+</html>

@@ -141,6 +141,70 @@ footer { color: var(--muted); font-size: 0.85rem; text-align: center; margin-top
 a { color: var(--akzent); }
 a:focus-visible { outline: 3px solid var(--akzent); outline-offset: 2px; }
 
+/* ---------- Plattform ---------- */
+main.breit { max-width: 760px; }
+.zurueck { display: inline-block; margin-bottom: 8px; font-size: 0.9rem; text-decoration: none; }
+.zurueck:hover { text-decoration: underline; }
+
+.kacheln { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+.kachel {
+  display: flex; flex-direction: column; gap: 6px;
+  padding: 18px; border-radius: 16px;
+  background: var(--panel); border: 1px solid var(--rand);
+  color: var(--text); text-decoration: none;
+  transition: transform 120ms, border-color 120ms;
+}
+.kachel:hover { transform: translateY(-2px); border-color: var(--akzent); }
+.kachel:focus-visible { outline: 3px solid var(--akzent); outline-offset: 3px; }
+.kachel-symbol {
+  width: 44px; height: 44px; border-radius: 12px;
+  display: grid; place-items: center; font-size: 1.4rem; font-weight: 800; color: #11131a;
+}
+.farbe-1 { background: #ff5c8a; }
+.farbe-2 { background: #4cd97b; }
+.farbe-3 { background: #3b9bff; }
+.farbe-4 { background: #ffd34d; }
+.kachel-titel { font-size: 1.2rem; font-weight: 700; }
+.kachel-text { color: var(--muted); font-size: 0.92rem; line-height: 1.45; }
+.kachel-rekord { margin-top: auto; padding-top: 6px; font-size: 0.85rem; font-weight: 600; color: var(--akzent); }
+
+/* Reaktion */
+.flaeche {
+  min-height: 300px; border-radius: 20px; border: none;
+  display: grid; place-items: center; text-align: center;
+  font: inherit; font-size: 1.6rem; font-weight: 800; padding: 20px;
+  background: var(--panel); color: var(--text); cursor: pointer;
+  user-select: none; -webkit-user-select: none; touch-action: manipulation; white-space: pre-line;
+}
+.flaeche.warten { background: #c0392b; color: #fff; }
+.flaeche.jetzt { background: #27ae60; color: #fff; }
+.flaeche.zufrueh { background: #e67e22; color: #fff; }
+.flaeche:focus-visible { outline: 3px solid var(--akzent); outline-offset: 3px; }
+.zeiten { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 0; padding: 0; list-style: none; }
+.zeiten li { background: var(--panel); border: 1px solid var(--rand); border-radius: 999px; padding: 4px 12px; font-variant-numeric: tabular-nums; }
+
+/* Zahlen-Blitz und Schnell-Rechnen */
+.grossanzeige {
+  min-height: 140px; border-radius: 20px; background: var(--panel); border: 1px solid var(--rand);
+  display: grid; place-items: center; text-align: center; padding: 16px;
+  font-size: clamp(2rem, 9vw, 3.4rem); font-weight: 800; letter-spacing: 0.08em;
+  font-variant-numeric: tabular-nums; overflow-wrap: anywhere;
+}
+.eingabe { display: flex; gap: 10px; }
+.eingabe input {
+  flex: 1; min-width: 0; font: inherit; font-size: 1.5rem; font-weight: 700; text-align: center;
+  padding: 10px 14px; border-radius: 14px; border: 1px solid var(--rand);
+  background: var(--panel); color: var(--text); font-variant-numeric: tabular-nums;
+}
+.eingabe input:focus-visible { outline: 3px solid var(--akzent); outline-offset: 2px; }
+.eingabe button, .knopf-leise {
+  font: inherit; font-weight: 700; padding: 10px 18px; border-radius: 14px;
+  border: 1px solid var(--rand); background: var(--panel); color: var(--text); cursor: pointer;
+}
+.eingabe button:disabled { opacity: 0.5; cursor: default; }
+.balken { height: 8px; border-radius: 999px; background: var(--rand); overflow: hidden; }
+.balken > div { height: 100%; width: 100%; background: var(--akzent); transform-origin: left; }
+
 /* Textseiten (Datenschutz) */
 .text { text-align: left; line-height: 1.6; }
 .text h2 { font-size: 1.15rem; margin: 1.6em 0 0.4em; }

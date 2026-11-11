@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zahlen-Blitz – Kopfspiele</title>
+  <meta name="description" content="Eine Zahl blitzt kurz auf, du tippst sie nach. Jede Runde kommt eine Ziffer dazu. Wie lang kannst du dir Zahlen merken?">
+  <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="dark light">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="zahlen-blitz.js" type="module"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <a class="zurueck" href="./">← Alle Spiele</a>
+      <h1>Zahlen-Blitz</h1>
+      <p class="untertitel">Die Zahl blitzt nur kurz auf. Merk sie dir und tipp sie nach. Jede Runde eine Ziffer mehr.</p>
+    </header>
+
+    <section class="anzeige" aria-label="Spielstand">
+      <div><span class="label">Ziffern</span><span id="laenge" class="wert">0</span></div>
+      <div><span class="label">Rekord</span><span id="rekord" class="wert">0</span></div>
+    </section>
+
+    <div id="anzeige" class="grossanzeige" aria-live="polite">?</div>
+    <div class="balken" aria-hidden="true"><div id="balken"></div></div>
+
+    <div class="eingabe">
+      <input id="antwort" type="text" inputmode="numeric" autocomplete="off" pattern="[0-9]*" maxlength="40" aria-label="Deine Antwort" placeholder="Zahl eintippen" disabled>
+      <button id="ok" disabled>OK</button>
+    </div>
+
+    <p id="status" class="status" role="status" aria-live="polite">Drück auf „Start“.</p>
+
+    <div class="steuerung">
+      <button id="start" class="start">Start</button>
+      <label class="ton"><input id="ton" type="checkbox" checked> Ton</label>
+    </div>
+
+    <footer>
+      <p><a href="datenschutz">Datenschutz</a></p>
+    </footer>
+  </main>
+</body>
+</html>
