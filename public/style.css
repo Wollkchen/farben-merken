@@ -138,6 +138,13 @@ h1 { margin: 0; font-size: 2rem; letter-spacing: -0.02em; }
 .ton { color: var(--muted); display: flex; gap: 6px; align-items: center; cursor: pointer; }
 
 footer { color: var(--muted); font-size: 0.85rem; text-align: center; margin-top: 8px; }
+a { color: var(--akzent); }
+a:focus-visible { outline: 3px solid var(--akzent); outline-offset: 2px; }
+
+/* Textseiten (Datenschutz) */
+.text { text-align: left; line-height: 1.6; }
+.text h2 { font-size: 1.15rem; margin: 1.6em 0 0.4em; }
+.text p { margin: 0 0 0.8em; }
 
 @media (prefers-reduced-motion: reduce) {
   .feld { transition: none; }

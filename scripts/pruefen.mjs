@@ -64,6 +64,7 @@ export function pruefeCode() {
       if (/<(iframe|object|embed|form)\b/i.test(text)) funde.push(`${datei}: <iframe>/<object>/<embed>/<form> gefunden`);
       if (/\b(src|href)\s*=\s*["']?(https?:)?\/\//i.test(text)) funde.push(`${datei}: Verweis auf fremde Adresse gefunden`);
       if (/style\s*=/i.test(text)) funde.push(`${datei}: Inline-style= gefunden (CSP blockiert das)`);
+      if (/\[DEINE? [^\]]*\]/.test(text)) funde.push(`${datei}: Platzhalter wie [DEIN NAME] noch nicht ausgefüllt`);
     }
   }
   return funde;
